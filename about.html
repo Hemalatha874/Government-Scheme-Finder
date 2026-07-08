@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Government Scheme Eligibility Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body id="aboutPage">
+    <div id="page-loader"><div class="loader-spinner"></div></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-govt">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#1a56db"/><path d="M18 8l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="#fff"/><circle cx="18" cy="18" r="14" stroke="#057a55" stroke-width="1.5" fill="none"/></svg>
+                Govt Scheme Finder
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="eligibility.html">Eligibility Checker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schemes.html">Schemes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guidance.html">Application Guidance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="notifications.html">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2"><button class="theme-toggle" id="themeToggle"><i class="bi bi-moon-fill"></i></button></li>
+                    <li class="nav-item ms-lg-2" id="userMenu" style="display:none">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i> <span id="userDisplayName">User</span></a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" onclick="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-lg-2" id="loginNavBtn"><a class="nav-link btn-login-nav" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-govt">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">About</li>
+            </ol>
+        </nav>
+
+        <!-- Project Overview -->
+        <div class="govt-card mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h2 class="section-title text-primary">About Our Portal</h2>
+                    <p class="lead">The Government Scheme Eligibility Finder is an online citizen-centric portal that simplifies search and verification of welfare schemes across India.</p>
+                    <p class="text-muted">Citizens often miss out on central and state government welfare benefits due to the lack of consolidated information and complex eligibility criteria. Our platform acts as a unified bridge, resolving details such as age thresholds, income brackets, educational qualification filters, and state jurisdictions to recommend the right scheme for the right citizen.</p>
+                </div>
+                <div class="col-md-5 text-center">
+                    <i class="bi bi-info-circle text-primary" style="font-size: 8rem; opacity: 0.15;"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objectives & Features -->
+        <h3 class="section-title text-center mb-4">Our Objectives & Features</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="govt-card text-center">
+                    <div class="card-icon icon-blue mx-auto"><i class="bi bi-check-circle"></i></div>
+                    <h5>Accuracy First</h5>
+                    <p class="text-muted small">Our portal utilizes exact rules and schemas collected directly from official sources like myScheme.gov.in, data.gov.in, and india.gov.in to verify scheme details.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="govt-card text-center">
+                    <div class="card-icon icon-green mx-auto"><i class="bi bi-lock"></i></div>
+                    <h5>Secure Profiles</h5>
+                    <p class="text-muted small">User demographic information, income details, and uploaded verification certificates are secured in database tables with proper encryption and validation controls.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="govt-card text-center">
+                    <div class="card-icon icon-orange mx-auto"><i class="bi bi-lightning"></i></div>
+                    <h5>Instant Recommendations</h5>
+                    <p class="text-muted small">The automated eligibility engine matches parameters against schemes, categorizing them into Eligible, Partially Eligible, or Not Eligible in seconds.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technologies Used -->
+        <div class="govt-card mb-5">
+            <h3 class="section-title mb-4"><i class="bi bi-cpu text-primary"></i> Technology Stack</h3>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="p-3 border rounded text-center bg-light">
+                        <i class="bi bi-filetype-html text-danger fs-2 mb-2 d-block"></i>
+                        <h6>HTML5 & Bootstrap 5</h6>
+                        <span class="text-muted small">Responsive grid layout, modern UI components, and accessible structure.</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 border rounded text-center bg-light">
+                        <i class="bi bi-filetype-css text-primary fs-2 mb-2 d-block"></i>
+                        <h6>CSS3 (Style variables)</h6>
+                        <span class="text-muted small">CSS Custom properties, animations, gradients, transitions, and dark mode mapping.</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 border rounded text-center bg-light">
+                        <i class="bi bi-filetype-js text-warning fs-2 mb-2 d-block"></i>
+                        <h6>JavaScript ES6+</h6>
+                        <span class="text-muted small">Dynamic content injection, search filters, state selectors, drag-and-drop uploads, and session checkers.</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="p-3 border rounded text-center bg-light">
+                        <i class="bi bi-filetype-php text-info fs-2 mb-2 d-block"></i>
+                        <h6>PHP & MySQL</h6>
+                        <span class="text-muted small">Secure database connections, parameterized query execution, file handling, and dashboard APIs.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Members -->
+        <h3 class="section-title text-center mb-4">Development Team</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="govt-card text-center">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                        <i class="bi bi-person-fill text-primary fs-2"></i>
+                    </div>
+                    <h5>Amit Kumar</h5>
+                    <p class="text-primary small mb-2">Lead Developer & Architect</p>
+                    <p class="text-muted small mb-0">Specializes in PHP backend design, system integration, and database schemas.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="govt-card text-center">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                        <i class="bi bi-person-fill text-success fs-2"></i>
+                    </div>
+                    <h5>Sneha Rao</h5>
+                    <p class="text-success small mb-2">Frontend Engineer</p>
+                    <p class="text-muted small mb-0">Crafts dynamic interfaces, ensures responsive grids, and designs accessible components.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="govt-card text-center">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                        <i class="bi bi-person-fill text-warning fs-2"></i>
+                    </div>
+                    <h5>Rahul Sharma</h5>
+                    <p class="text-warning small mb-2">Database Administrator</p>
+                    <p class="text-muted small mb-0">Handles indexes, query optimization, foreign keys, and dataset import processing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-govt">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Govt Scheme Finder</h5>
+                    <p class="small">Helping citizens discover and apply for government welfare schemes across India.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <a href="eligibility.html" class="footer-link">Eligibility Checker</a>
+                    <a href="schemes.html" class="footer-link">Schemes</a>
+                    <a href="documents.html" class="footer-link">Documents</a>
+                    <a href="guidance.html" class="footer-link">Guidance</a>
+                </div>
+                <div class="col-md-2">
+                    <h5>Resources</h5>
+                    <a href="notifications.html" class="footer-link">Notifications</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="admin.html" class="footer-link">Admin</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Official Portals</h5>
+                    <a href="https://www.myscheme.gov.in" target="_blank" class="footer-link">myScheme.gov.in</a>
+                    <a href="https://www.india.gov.in" target="_blank" class="footer-link">india.gov.in</a>
+                    <a href="https://data.gov.in" target="_blank" class="footer-link">data.gov.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Government Scheme Eligibility Finder. For educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
