@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Guidance - Government Scheme Eligibility Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body id="guidancePage">
+    <div id="page-loader"><div class="loader-spinner"></div></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-govt">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#1a56db"/><path d="M18 8l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="#fff"/><circle cx="18" cy="18" r="14" stroke="#057a55" stroke-width="1.5" fill="none"/></svg>
+                Govt Scheme Finder
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="eligibility.html">Eligibility Checker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schemes.html">Schemes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="guidance.html">Application Guidance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="notifications.html">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2"><button class="theme-toggle" id="themeToggle"><i class="bi bi-moon-fill"></i></button></li>
+                    <li class="nav-item ms-lg-2" id="userMenu" style="display:none">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i> <span id="userDisplayName">User</span></a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" onclick="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-lg-2" id="loginNavBtn"><a class="nav-link btn-login-nav" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-govt">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Application Guidance</li>
+            </ol>
+        </nav>
+
+        <div class="text-center mb-5">
+            <h2 class="section-title"><i class="bi bi-info-circle text-primary"></i> Application Guidance</h2>
+            <p class="section-subtitle mx-auto">Follow our comprehensive walkthrough to apply successfully for welfare schemes online or offline</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left Side: Navigation Tabs -->
+            <div class="col-lg-8">
+                <div class="govt-card">
+                    <ul class="nav nav-tabs nav-tabs-govt mb-4" id="guidanceTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active fw-bold" id="online-tab" data-bs-toggle="tab" data-bs-target="#onlineContent" type="button" role="tab"><i class="bi bi-laptop"></i> Online Application</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link fw-bold" id="offline-tab" data-bs-toggle="tab" data-bs-target="#offlineContent" type="button" role="tab"><i class="bi bi-building"></i> Offline Application</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="guidanceTabContent">
+                        <!-- Online Content -->
+                        <div class="tab-pane fade show active" id="onlineContent" role="tabpanel">
+                            <h5 class="mb-3 text-primary">How to Apply Online:</h5>
+                            <ol class="list-govt ps-0">
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-primary rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">1</span>
+                                    <div>
+                                        <h6>Determine Eligibility & Scheme</h6>
+                                        <p class="text-muted small mb-0">Use the <strong>Eligibility Checker</strong> on our portal. Identify the scheme you qualify for and click <strong>View Details</strong> to read requirements.</p>
+                                    </div>
+                                </li>
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-primary rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">2</span>
+                                    <div>
+                                        <h6>Prepare Required Documents</h6>
+                                        <p class="text-muted small mb-0">Scan and prepare PDF/JPG files of Aadhaar, Income Certificate, Community Certificate, and Bank Passbook. Keep them ready in our <strong>Documents Section</strong>.</p>
+                                    </div>
+                                </li>
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-primary rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">3</span>
+                                    <div>
+                                        <h6>Navigate to Official Portal</h6>
+                                        <p class="text-muted small mb-0">Click the <strong>Apply Online</strong> button on the Scheme Details page to redirect to the official government registration portal (e.g. NSP, PM-KISAN).</p>
+                                    </div>
+                                </li>
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-primary rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">4</span>
+                                    <div>
+                                        <h6>Submit Form & Track</h6>
+                                        <p class="text-muted small mb-0">Fill in the online form, upload required files, submit, and note down your Application Reference Number for tracking purposes.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <!-- Offline Content -->
+                        <div class="tab-pane fade" id="offlineContent" role="tabpanel">
+                            <h5 class="mb-3 text-success">How to Apply Offline:</h5>
+                            <ol class="list-govt ps-0">
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-success rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">1</span>
+                                    <div>
+                                        <h6>Download & Print Form</h6>
+                                        <p class="text-muted small mb-0">Download the standard application form using the <strong>Download Form</strong> button on this page. Print it clearly in black or blue ink.</p>
+                                    </div>
+                                </li>
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-success rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">2</span>
+                                    <div>
+                                        <h6>Fill Details Legibly</h6>
+                                        <p class="text-muted small mb-0">Complete all columns in block letters. Ensure fields like Name, Age, Income, and Bank Account details match your Aadhaar exactly.</p>
+                                    </div>
+                                </li>
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-success rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">3</span>
+                                    <div>
+                                        <h6>Attach Self-Attested Photocopies</h6>
+                                        <p class="text-muted small mb-0">Attach physical copies of Aadhaar, Community Certificate, and Income Certificate. Sign across the photocopies to self-attest.</p>
+                                    </div>
+                                </li>
+                                <li class="mb-4 d-flex align-items-start gap-3">
+                                    <span class="badge bg-success rounded-circle fs-6 p-2 d-flex align-items-center justify-content-center" style="width:32px; height:32px;">4</span>
+                                    <div>
+                                        <h6>Submit to Helpdesk</h6>
+                                        <p class="text-muted small mb-0">Visit the nearest Common Service Centre (CSC), Block Development Office (BDO), or the relevant department desk to submit the papers. Obtain an acknowledgment slip.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Tips & Details -->
+            <div class="col-lg-4">
+                <div class="govt-card mb-4" style="border-left: 4px solid var(--accent-orange);">
+                    <h5><i class="bi bi-lightbulb text-warning"></i> Application Tips</h5>
+                    <ul class="small text-muted ps-3 mt-3">
+                        <li class="mb-2">Ensure your Mobile Number is linked to your Aadhaar Card to receive OTPs during verification.</li>
+                        <li class="mb-2">Your Bank Account must be linked to Aadhaar (Aadhaar Seeded) to receive Direct Benefit Transfer (DBT) funds.</li>
+                        <li class="mb-2">Ensure your family Income Certificate is updated (valid for 6 months or 1 year depending on state rules).</li>
+                        <li class="mb-2">Never pay fees to anyone. Government scheme registrations are 100% free of cost on official portals.</li>
+                    </ul>
+                </div>
+
+                <div class="govt-card mb-4">
+                    <h5><i class="bi bi-clock"></i> Typical Processing Times</h5>
+                    <div class="mt-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="small fw-semibold">Scholarships & Education</span>
+                            <span class="badge bg-primary">30 - 45 Days</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="small fw-semibold">Agricultural Cash Benefits</span>
+                            <span class="badge bg-success">15 - 30 Days</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="small fw-semibold">Pension Schemes</span>
+                            <span class="badge bg-info">45 - 60 Days</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span class="small fw-semibold">Housing Subsidies</span>
+                            <span class="badge bg-secondary">60 - 90 Days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govt-card">
+                    <h5>Actions</h5>
+                    <div class="d-grid gap-2 mt-3">
+                        <a href="https://www.myscheme.gov.in" target="_blank" class="btn btn-govt-primary">
+                            <i class="bi bi-globe"></i> Visit Official Website
+                        </a>
+                        <a href="downloads/general_application_form.pdf" download class="btn btn-outline-primary">
+                            <i class="bi bi-download"></i> Download Form
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-govt">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Govt Scheme Finder</h5>
+                    <p class="small">Helping citizens discover and apply for government welfare schemes across India.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <a href="eligibility.html" class="footer-link">Eligibility Checker</a>
+                    <a href="schemes.html" class="footer-link">Schemes</a>
+                    <a href="documents.html" class="footer-link">Documents</a>
+                    <a href="guidance.html" class="footer-link">Guidance</a>
+                </div>
+                <div class="col-md-2">
+                    <h5>Resources</h5>
+                    <a href="notifications.html" class="footer-link">Notifications</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="admin.html" class="footer-link">Admin</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Official Portals</h5>
+                    <a href="https://www.myscheme.gov.in" target="_blank" class="footer-link">myScheme.gov.in</a>
+                    <a href="https://www.india.gov.in" target="_blank" class="footer-link">india.gov.in</a>
+                    <a href="https://data.gov.in" target="_blank" class="footer-link">data.gov.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Government Scheme Eligibility Finder. For educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

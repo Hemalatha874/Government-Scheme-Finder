@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications & Announcements - Government Scheme Finder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body id="notificationsPage">
+    <div id="page-loader"><div class="loader-spinner"></div></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-govt">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="18" fill="#1a56db"/><path d="M18 8l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="#fff"/><circle cx="18" cy="18" r="14" stroke="#057a55" stroke-width="1.5" fill="none"/></svg>
+                Govt Scheme Finder
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="eligibility.html">Eligibility Checker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schemes.html">Schemes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
+                    <li class="nav-item"><a class="nav-link" href="guidance.html">Application Guidance</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="notifications.html">Notifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2"><button class="theme-toggle" id="themeToggle"><i class="bi bi-moon-fill"></i></button></li>
+                    <li class="nav-item ms-lg-2" id="userMenu" style="display:none">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="bi bi-person-circle"></i> <span id="userDisplayName">User</span></a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" onclick="logout()">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item ms-lg-2" id="loginNavBtn"><a class="nav-link btn-login-nav" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-govt">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Notifications</li>
+            </ol>
+        </nav>
+
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+            <div>
+                <h2 class="section-title mb-0"><i class="bi bi-bell text-primary"></i> Notifications & Announcements</h2>
+                <p class="text-muted mb-0">Stay informed about new scheme additions, updates, and upcoming deadlines</p>
+            </div>
+            
+            <div class="d-flex gap-2">
+                <select id="typeFilter" class="form-select" style="width: auto;">
+                    <option value="all">All Notification Types</option>
+                    <option value="announcement">Announcements Only</option>
+                    <option value="scheme">New Schemes</option>
+                    <option value="deadline">Application Deadlines</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div id="notificationsContainer">
+                    <div class="text-center py-5">
+                        <div class="loader-spinner mx-auto"></div>
+                        <p class="mt-2 text-muted">Loading alerts...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-govt">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5>Govt Scheme Finder</h5>
+                    <p class="small">Helping citizens discover and apply for government welfare schemes across India.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <a href="eligibility.html" class="footer-link">Eligibility Checker</a>
+                    <a href="schemes.html" class="footer-link">Schemes</a>
+                    <a href="documents.html" class="footer-link">Documents</a>
+                    <a href="guidance.html" class="footer-link">Guidance</a>
+                </div>
+                <div class="col-md-2">
+                    <h5>Resources</h5>
+                    <a href="notifications.html" class="footer-link">Notifications</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="admin.html" class="footer-link">Admin</a>
+                </div>
+                <div class="col-md-4">
+                    <h5>Official Portals</h5>
+                    <a href="https://www.myscheme.gov.in" target="_blank" class="footer-link">myScheme.gov.in</a>
+                    <a href="https://www.india.gov.in" target="_blank" class="footer-link">india.gov.in</a>
+                    <a href="https://data.gov.in" target="_blank" class="footer-link">data.gov.in</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Government Scheme Eligibility Finder. For educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        let allNotifications = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNotifications();
+            document.getElementById('typeFilter').addEventListener('change', renderNotifications);
+        });
+
+        async function loadNotifications() {
+            const data = await apiCall('notifications.php?action=list');
+            if (data.success && data.notifications) {
+                allNotifications = data.notifications;
+                renderNotifications();
+            } else {
+                document.getElementById('notificationsContainer').innerHTML = `
+                    <div class="alert alert-danger">Failed to load notifications. Please try again.</div>`;
+            }
+        }
+
+        function renderNotifications() {
+            const container = document.getElementById('notificationsContainer');
+            const filterType = document.getElementById('typeFilter').value;
+            
+            const filtered = allNotifications.filter(n => {
+                if (filterType === 'all') return true;
+                return n.notification_type === filterType;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="bi bi-bell-slash"></i>
+                        <h5>No notifications found</h5>
+                        <p>There are no active notifications matching this category.</p>
+                    </div>`;
+                return;
+            }
+
+            const badges = {
+                scheme: '<span class="badge bg-primary"><i class="bi bi-grid-fill"></i> New Scheme</span>',
+                announcement: '<span class="badge bg-success"><i class="bi bi-megaphone-fill"></i> Announcement</span>',
+                deadline: '<span class="badge bg-danger"><i class="bi bi-calendar-event-fill"></i> Deadline</span>'
+            };
+
+            container.innerHTML = filtered.map(n => {
+                const badge = badges[n.notification_type] || '';
+                let deadlineHtml = '';
+                if (n.notification_type === 'deadline' && n.deadline_date) {
+                    deadlineHtml = `
+                        <div class="alert alert-danger py-1 px-2 d-inline-block small mt-2 mb-0">
+                            <i class="bi bi-exclamation-triangle-fill"></i> Last Date: <strong>${formatDate(n.deadline_date)}</strong>
+                        </div>`;
+                }
+
+                return `
+                    <div class="notif-item notif-type-${n.notification_type}">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <div>
+                                ${badge}
+                                <h5 class="mt-2 mb-1">${n.title}</h5>
+                            </div>
+                            <small class="text-muted"><i class="bi bi-clock"></i> ${formatDate(n.created_at)}</small>
+                        </div>
+                        <p class="text-muted mb-1">${n.message}</p>
+                        ${deadlineHtml}
+                    </div>`;
+            }).join('');
+        }
+    </script>
+</body>
+</html>
